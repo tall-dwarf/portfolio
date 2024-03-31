@@ -1,0 +1,686 @@
+$main-color: rgb(18, 247, 214)
+$text-color: rgb(255, 255, 255)
+
+@mixin font-size($size, $weight, $height)
+    font-size: $size
+    font-weight: $weight
+    line-height: $height
+
+:root
+    --swiper-navigation-size: 20px
+    --swiper-theme-color: #fff
+*
+    padding: 0
+    margin: 0
+    list-style-type: none
+    outline: none
+    text-decoration: none
+    font-family: "IBM Plex Mono", monospace
+    @include font-size($size: 16px, $weight: 400, $height: 20px)
+    color: #fff
+    box-sizing: border-box
+
+body
+    background-color: rgb(41, 47, 54)
+
+img
+    max-width: 100%
+
+h1, h1 > *
+    @include font-size($size: 117px, $weight: 400, $height: 134px)
+h2, h2 > *
+    @include font-size($size: 64px, $weight: 400, $height: 72px)
+h3, h3 > *
+    @include font-size($size: 32px, $weight: 500, $height: 42px)
+
+.social
+    display: flex
+    gap: 32px
+
+.color-main
+    color: $main-color
+
+.active
+    color: $main-color
+
+.container
+    width: 90vw
+    margin: 0 auto
+    max-width: 1400px
+
+.header
+    &-social
+        display: none
+        &-link
+            display: flex
+            gap: 8px
+            align-items: center
+    &-inner
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 24px 0px
+
+.main
+    padding-top: 64px
+    padding-bottom: 64px
+    &__title
+        display: none
+    &-talk
+        width: 100%
+    &-info
+        display: flex
+        flex-direction: column
+        gap: 70px
+    &-inner
+        display: flex
+        flex-direction: column
+        gap: 64px
+        align-items: center
+    &-profile
+        max-width: 340px
+        padding: 37px 24px
+        border: 4px solid rgb(255, 255, 255)
+        border-radius: 160px 0px 160px 0px
+        box-shadow: -4px -4px 2px 0px rgb(18, 247, 214)
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        &__communication
+            margin-top: 32px
+        &__skills
+            margin-top: 16px
+        &__download-link
+            margin-top: 32px
+
+.communication
+    display: flex
+    flex-direction: column
+    gap: 16px
+    width: 100%
+    &-item
+        display: flex
+        align-items: center
+        gap: 16px
+
+.profile-skils
+    display: flex
+    gap: 14px
+    flex-wrap: wrap
+    &-item
+        @include font-size($size: 14px, $weight: 500, $height: 18px)
+
+        background-color: $main-color
+        color: #000
+        padding: 0px 6px
+        border-radius: 10px
+
+.download-link
+    display: flex
+    background-color: rgb(255, 255, 255)
+    align-items: center
+    justify-content: center
+    color: #000
+    @include font-size($size: 20px, $weight: 400, $height: 24px)
+    padding: 16px 0px
+    width: 100%
+    max-width: 220px
+    gap: 16px
+    border-radius: 30px
+
+.tag
+    padding-left: 16px
+    position: relative
+
+    &-h1, &-p
+        &::before, &::after
+            @include font-size($size: 14px, $weight: 400, $height: 18px)
+            z-index: 1
+            color: rgb(152, 250, 236)
+            position: absolute
+        &::before
+            left: 0
+            top: -20px
+        &::after
+            left: 0
+            bottom: -20px
+
+    &-p
+        &::before
+            top: -30px
+            content: "<p>"
+        &::after
+            bottom: -30px
+            content: "</p>"
+    &-h1
+        &::before
+            content: "<h1>"
+        &::after
+            content: "</h1>"
+
+.talk
+    &-link
+        display: flex
+        gap: 16px
+        align-items: center
+        &__img
+            background-color: rgb(67, 69, 77)
+            border-radius: 50%
+            width: 40px
+            height: 40px
+            display: flex
+            align-items: center
+            justify-content: center
+        &__text
+            @include font-size($size: 32px, $weight: 500, $height: 42px)
+
+    &-list
+        display: flex
+        flex-direction: column
+        border-radius: 80px
+        box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25)
+        background: rgb(26, 30, 35)
+        max-width: 215px
+        padding: 48px 32px
+        gap: 40px
+        &-item
+            display: flex
+            gap: 16px
+            align-items: center
+            &__cnt
+                @include font-size($size: 48px, $weight: 500, $height: 62px)
+                color: $main-color
+            &__text
+                @include font-size($size: 16px, $weight: 400, $height: 20px)
+
+.about
+    padding: 64px 0px
+    background: url("../images/about/about.jpg") center no-repeat
+    background-size: cover
+    position: relative
+    &__img
+        border-radius: 20px
+        display: none
+    &-content
+        display: flex
+        align-items: center
+        flex-direction: column
+        gap: 32px
+    &-block
+        max-width: 880px
+        padding: 24px
+        border-radius: 40px
+        background: rgb(41, 47, 54)
+        display: flex
+        flex-direction: column
+        height: 577px
+        justify-content: space-around
+        &__title
+            @include font-size($size: 32px, $weight: 500, $height: 42px)
+
+.title
+    padding: 16px 40px
+    text-align: center
+    border: 4px solid rgb(18, 247, 214)
+    border-radius: 40px 0px 40px 0px
+    background: rgb(41, 47, 54)
+
+.skills
+    padding: 64px 0px
+    background: url("../images/skills/bg.jpeg") center no-repeat
+    background-size: contain
+    &-tag
+        display: none
+    &__technology
+        margin-top: 30px
+    &-inner
+        display: flex
+        flex-direction: column
+        align-items: center
+    &__title
+        @include font-size($size: 64px, $weight: 400, $height: 72px)
+        margin-bottom: 16px
+        display: inline
+        color: $main-color
+    &__subtitle
+        text-align: center
+        @include font-size($size: 16px, $weight: 400, $height: 20px)
+
+    &__list
+        margin-top: 64px
+    &-list
+        display: flex
+        flex-direction: column
+        gap: 32px
+        width: 100%
+        align-items: center
+        justify-content: center
+    &-item
+        background-color: rgb(152, 250, 236)
+        border-left: 5px solid rgb(12, 115, 184)
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 16px 0px
+        gap: 8px
+        border-radius: 10px
+        max-width: 358px
+        &__title
+            color: #000
+            @include font-size($size: 24px, $weight: 400, $height: 32px)
+        &__subtitle
+            color: #000
+            @include font-size($size: 16px, $weight: 400, $height: 20px)
+
+        &__img
+            width: 32px
+            height: 32px
+
+.section
+    padding: 64px 0px
+    &-title
+        border-bottom: 2px solid $main-color
+        position: relative
+        padding-bottom: 12px
+        color: rgb(18, 247, 214)
+        &::after, &::before
+            position: absolute
+            bottom: -10px
+            content: ''
+            width: 20px
+            height: 20px
+            border-radius: 50%
+            background-color: $main-color
+        &::after
+            right: 0
+    &-subtitle
+        margin-top: 16px
+        text-align: center
+        @include font-size(16px, 400, 20px)
+        
+
+.technology
+    align-items: center
+    display: flex
+    flex-wrap: wrap
+    gap: 20px
+    &-html > &-item-wrapper
+        background-color: rgb(229, 79, 38)
+    &-html > &-item__title
+        color: rgb(229, 79, 38)
+
+    &-css > &-item-wrapper
+        background-color: rgb(12, 115, 184)
+    &-css > &-item__title
+        color: rgb(12, 115, 184)
+
+    &-js > &-item-wrapper
+        background-color: rgb(231, 160, 32)
+    &-js > &-item__title
+        color: rgb(231, 160, 32)
+
+    &-react > &-item-wrapper
+        background-color: rgb(40, 169, 224)
+    &-react > &-item__title
+        color: rgb(40, 169, 224)
+
+    &-item
+        display: flex
+        align-items: center
+        flex-direction: column
+        flex: 1 1 40%
+        justify-content: center
+        &__title
+            margin-top: 24px
+            @include font-size($size: 32px, $weight: 500, $height: 42px)
+
+        &-wrapper
+            width: 120px
+            height: 120px
+            border-radius: 50%
+            display: flex
+            align-items: center
+            justify-content: center
+
+
+.works
+    background-color: rgb(26, 30, 35)
+    &-inner
+        display: flex
+        flex-direction: column
+        align-items: center
+    &-swipper
+        margin-top: 50px
+        position: relative
+        max-width: 100%
+        width: 400px
+        overflow: hidden
+        &-item
+            display: flex
+            align-items: center
+            justify-content: center
+
+.swiper-button-prev, .swiper-button-next
+    width: 36px
+    height: 36px
+    background-color: rgb(41, 47, 54)
+    border-radius: 50%
+    cursor: pointer
+
+.swiper-button-next
+    right: 0px
+
+.swiper-button-prev
+    left: 0px
+
+
+.btn
+    width: 100%
+    padding: 16px 0px
+    cursor: pointer
+    border-radius: 30px
+    border: 0px
+    @include font-size(20px, 400, 24px)
+    transition: all 0.2s
+    &-icon
+        position: relative
+        &-message::after
+            position: absolute
+            content: ''
+            z-index: 1
+            width: 22px
+            height: 22px
+            top: 50%
+            transform: translateY(-40%)
+            right: 15px
+            background: url("../images/icons/icon-send.png") center no-repeat
+            
+    &-main
+        color: #000
+        background-color: $main-color
+        border: 1px solid $main-color
+        &:hover
+            color: #fff
+            background-color: transparent
+
+    &-transparent
+        background-color: transparent
+        color: #fff
+        border: 1px solid $main-color
+        &:hover
+            color: #000
+            background-color: $main-color
+
+
+
+.blog
+    &-inner
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+    &__menu
+        margin-top: 60px
+        display: flex
+        gap: 32px
+        width: 100%
+        align-items: center
+        justify-content: center
+        &-btn
+            max-width: 162px
+    &__subtitle
+        margin-bottom: 60px
+
+    &-item
+        &:nth-child(2n) > .blog-item__hr-start
+            display: none
+        &:nth-child(2n) > .blog-item__hr-end
+            display: none
+        &:last-child > .blog-item__hr-end
+            display: block
+        &-content
+            padding: 32px 0px
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+        &__img
+            max-width: 240px
+            margin-bottom: 32px
+        &__title
+            @include font-size(32px, 400, 36px)
+            color: $main-color
+            margin-bottom: 24px
+        &__subtitle
+            @include font-size(16px, 300, 18px)
+            margin-bottom: 24px
+            
+        &__link
+            display: inline-block
+            margin-bottom: 28px
+            & > span
+                @include font-size(16px, 300, 18px)
+                color: $main-color
+                border-bottom: 1px solid $main-color
+
+        &-tags
+            display: flex
+            gap: 10px
+            flex-wrap: wrap
+        &-tag
+            @include font-size(14px, 300, 16px)
+            background-color: rgb(67, 69, 77)
+            padding: 4px 8px
+            border-radius: 8px
+        &__tags
+            margin-bottom: 20px
+
+        &-info
+            display: flex
+            align-items: center
+            gap: 6px
+            @include font-size(14px, 300, 16px)
+            &__field
+                font-weight: 600
+            &-item
+                gap: 4px
+                display: flex
+                align-items: center    
+            
+
+.contacts
+    background-color: rgb(26, 30, 35)
+    &__form
+        margin-top: 40px
+        width: 100%
+
+    &__send
+        margin-top: 60px
+    &-inner
+        display: flex
+        flex-direction: column
+        align-items: center
+
+.form
+    max-width: 100%
+    display: flex
+    // align-items: center
+    gap: 40px
+    flex-direction: column
+    &-btn
+        max-width: 235px
+        margin: 0 auto
+    &-row
+        display: flex
+        max-width: 100%
+        gap: 24px
+    &-item
+        max-width: 100%
+        flex: 1 1 auto
+        gap: 20px
+        display: flex
+        flex-direction: column
+        &__label
+            @include font-size(16px, 300, 18px)
+            
+            color: $main-color
+        &__input
+            width: 100%
+            border: none
+            background-color: transparent
+            border-bottom: 2px solid $main-color
+            height: 25px
+            &::placeholder
+                @include font-size(16px, 300, 18px)
+                
+                color: #fff
+                transform: translateY(-6px)
+
+
+
+.footer
+    &-inner
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 24px 0px 32px
+        flex-direction: column
+    &-info
+        margin-top: 24px
+        justify-content: space-around
+        display: flex
+        align-items: center
+        gap: 6px
+        flex-wrap: wrap
+
+.article
+    &__title
+        @include font-size(32px, 400, 36px)
+        color: $main-color
+        margin-bottom: 32px
+    &__info
+        margin: 16px 0px
+    &-content
+        &__title
+            margin: 20px 0px 10px
+            color: $main-color
+        &__img
+            margin: 32px auto
+            display: block
+    &__tags
+        margin-top: 32px
+        margin-bottom: 32px
+    &__text
+        text-align: justify
+    &__text + &__text
+        margin-top: 10px
+    // &-content
+    //     display: flex
+    //     align-items: center
+    //     flex-direction: column
+        
+
+
+@media screen and (min-width: 550px) 
+
+    .header
+        &-social
+            display: flex
+            gap: 32px
+            &-link > span
+                display: none
+    h3, h3 > *
+        @include font-size(64px, 400, 72px)
+    .skills
+        &-list
+            flex-direction: row
+        &-item
+            flex: 1 1 auto
+    .about
+        &-block
+            max-width: 620px
+        &-content
+            align-items: flex-start
+        &-inner
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 40px
+        &__img
+            display: block
+    .form
+        &-row
+            gap: 40px
+
+@media screen and (min-width: 1024px)
+    .header-social-link > span
+        display: block
+    .main
+        &__title
+            display: block
+            margin: 0 auto
+            text-align: center
+            color: rgb(152, 250, 236)
+            margin-bottom: 40px
+        &-inner
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            grid-template-areas: ". profile ." "info info talk-list" "talk talk talk-list"
+        &-profile
+            grid-area: profile
+        &-info
+            grid-area: info
+        &-talk
+            grid-area: talk
+        &__talk-list
+            grid-area: talk-list
+    .about
+        // background: url("../images/about/about.jpg") center no-repeat
+        &-inner
+            flex-direction: row
+            align-items: flex-start
+            gap: 10px
+            justify-content: space-between
+            display: flex
+    .technology
+        max-width: 900px
+        width: 100%
+        flex-wrap: wrap
+
+        &-item
+            flex: 1 1 auto
+    .skills
+        position: relative
+        &-tag
+            position: absolute
+            z-index: 1
+            top: 50px
+            right: 100px
+            display: block
+        &__technology
+            margin-top: 60px
+
+    .works-swipper
+        width: 650px
+
+    .blog-item-content
+        display: flex
+        flex-direction: row
+        gap: 60px
+        align-items: center
+    .blog-item__img
+        margin: 0px
+    .contacts__form
+        max-width: 700px
+
+    .footer-inner
+        display: flex
+        flex-direction: row-reverse
+        align-items: center
+        justify-content: space-between
+    .footer-info
+        margin: 0px
+
+    .footer-info
+        width: 100%
